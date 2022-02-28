@@ -22,21 +22,21 @@ searchButton.addEventListener("click", () => {
     console.log('searching at: ' + encodedURI);
 
     fetch(encodedURI,requestOptions)
-    .then(res => {
+    .then(res => res.json())
+    .then(data => {
 
-        res = res.json();
 
-        console.log(res.status)
-        console.log(res)
+        console.log(data.status)
+        console.log(data)
 
-        changeImage(res);
+        changeImage(data);
 
 
     })
 
-    function changeImage(response){
+    function changeImage(data){
 
-        var path = response.collection.items[0].links[0].href
+        var path = data.collection.items[0].links[0].href
 
         resultImage.src = path;
 
