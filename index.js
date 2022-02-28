@@ -40,9 +40,12 @@ searchButton.addEventListener("click", () => {
 
         for(i=0;i<resultImages.length;i++){
 
+
             path = data.collection.items[i].links[0].href
 
             resultImages[i].src = path;
+
+            resultImages[i].di
 
     
 
