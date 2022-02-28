@@ -1,5 +1,11 @@
 body{
 
     background-color: rgb(140, 202, 204);
+    display:grid;
 
+}
+
+#search-bar-wrapper{
+
+    justify-items: center;
 }
