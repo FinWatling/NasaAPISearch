@@ -1,7 +1,25 @@
 body{
 
     background-color: rgb(140, 202, 204);
-    display:grid;
+
+}
+
+.search-results-wrapper{
+    
+        padding-top: 1rem;
+        display: grid;
+        grid-gap: 1rem;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        border: 3px red solid;
+      
+}
+
+.result-images{
+
+    border: 3px red solid;
+    height: 5rem;
+    width: auto;
+    
 
 }
 
