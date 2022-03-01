@@ -13,17 +13,17 @@ body{
     
 }
 
-.search-results-wrapper{
+#search-results-wrapper{
     
         padding-top: 1rem;
         place-items: center;
         display: grid;
-        grid-gap: 6rem;
+        grid-gap: 15rem;
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
       
 }
 
-.result-images{
+img{
 
     border: 2px rgba(0, 0, 0, 0.212) solid;
     padding: 0;
@@ -41,4 +41,10 @@ body{
     place-items: center;
     justify-items: center;
     padding-bottom: 2rem;
+}
+
+@media screen{
+
+    
+    
 }

@@ -2,7 +2,8 @@ window.addEventListener("load", () => {
 
 searchButton = document.querySelector('#search-button');
 searchBar = document.querySelector('#search-bar');
-resultImages = document.querySelectorAll('.result-images')
+searchResultsWrapper = document.querySelector('#search-results-wrapper')
+numberOfResults = document.querySelector('#number-of-results')
 
 var url = 'https://images-api.nasa.gov/search?q='
 
@@ -38,19 +39,35 @@ searchButton.addEventListener("click", () => {
 
         var path;
 
-        for(i=0;i<resultImages.length;i++){
 
+
+            while (searchResultsWrapper.lastChild) {
+                searchResultsWrapper.removeChild(searchResultsWrapper.lastChild);
+            }
+
+
+        
+
+        for(i=0;i<data.collection.items.length;i++){
+
+            
+            var img = document.createElement("img");
 
             path = data.collection.items[i].links[0].href
 
-            resultImages[i].src = path;
+            img.src = path;
 
-            resultImages[i].di
+            searchResultsWrapper.appendChild(img);
 
     
 
 
         }
+
+        numberOfResults.textContent = data.collection.items.length
+
+
+
 
 
     }
