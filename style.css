@@ -1,36 +1,67 @@
+body, html { overflow-x:hidden; }
+
 body{
 
-    background-color: rgba(125, 119, 182, 0.658);
+    background-color: rgba(205, 188, 233, 0.671);
     display:grid;
-    max-width: 100%;
+    width: 100vw;
     overflow-x: hidden;
+    position:relative;
 
+}
+
+h1, h3{
+    font-family:'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif
 }
 
 #header-wrapper{
 
     text-align: center;
-    
 }
 
 #search-results-wrapper{
     
         padding-top: 1rem;
+        padding-left: 3rem;
+        padding-right: 3rem;
         place-items: center;
         display: grid;
         grid-gap: 15rem;
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
       
 }
 
-img{
+.info-section{
 
-    border: 2px rgba(0, 0, 0, 0.212) solid;
-    padding: 0;
-    margin:0;
+    align-content: center;
+    padding-left: 1rem;
+
+}
+
+.result-card{
+
+    place-items: center;
+    align-items: center;
     width: 20rem;
-    height: 15rem;
-    object-fit:contain;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.3), 0 8px 20px 0 rgba(0, 0, 0, 0.15);
+    max-width:30rem;
+    overflow: hidden;
+    height: auto;
+    background-color: rgba(255, 255, 255, 0.548);
+    
+}
+
+img{
+    
+    
+    padding:0;
+    margin:1rem;
+    position: relative;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.3), 0 8px 20px 0 rgba(0, 0, 0, 0.15);
+    width:90%;
+    max-height: 300px;
+    height:100%;
+    object-fit:fill;
 
 }
 
@@ -45,6 +76,6 @@ img{
 
 @media screen{
 
-    
+
     
 }

@@ -27,8 +27,8 @@ searchButton.addEventListener("click", () => {
     .then(data => {
 
 
-        console.log(data.status)
-        console.log(data)
+        console.log(data.status);
+        console.log(data);
 
         search(data);
 
@@ -46,25 +46,61 @@ searchButton.addEventListener("click", () => {
             }
 
 
-        
+        const resultsSet = new Set();
 
         for(i=0;i<data.collection.items.length;i++){
 
-            
-            var img = document.createElement("img");
+            if (resultsSet.size == 0){
+                resultsSet.add(data.collection.items[i].links[0].href);
+            }else if(resultsSet.has(data.collection.items[i].links[0].href)){
+                continue;
+            }
 
-            path = data.collection.items[i].links[0].href
+            console.log(resultsSet)
+
+            
+
+
+            var resultCard = document.createElement("div");
+            var infoSection = document.createElement("div");
+            var imgcontainer = document.createElement("div");
+            var img = document.createElement("img");
+            var title = document.createElement("h3");
+            var date = document.createElement("h6");
+
+            
+            resultCard.className = "result-card";
+            infoSection.className = "info-section";
+            imgcontainer.className = "img-container";9
+
+            
+            
+
+
+
+            path = data.collection.items[i].links[0].href;
+
+            title.textContent = data.collection.items[i].data[0].title;
+
+            
 
             img.src = path;
 
-            searchResultsWrapper.appendChild(img);
+            searchResultsWrapper.appendChild(resultCard);
+            resultCard.appendChild(img);
+            resultCard.appendChild(infoSection);
+            infoSection.appendChild(title);
 
     
 
 
         }
 
-        numberOfResults.textContent = data.collection.items.length
+        if(data.collection.items.length >= 100){
+        numberOfResults.textContent = "Your search for \"" +  query  + "\" returned more than " + data.collection.items.length + " results:"
+        } else {
+            numberOfResults.textContent = data.collection.items.length + " results found"
+        }
 
 
 
