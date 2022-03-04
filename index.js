@@ -98,8 +98,10 @@ searchButton.addEventListener("click", () => {
 
         if(data.collection.items.length >= 100){
         numberOfResults.textContent = "Your search for \"" +  query  + "\" returned more than " + data.collection.items.length + " results:"
-        } else {
-            numberOfResults.textContent = data.collection.items.length + " results found"
+        } else if(data.collection.items.length > 0){
+            numberOfResults.textContent = "Your search for \"" +  query  + "\" returned " + data.collection.items.length + " results:"
+        }else{
+            numberOfResults.textContent = "No results found."
         }
 
 
