@@ -1,5 +1,6 @@
 body, html {
     overflow-x: hidden;
+    max-width: 100vw;
 }
 
 body {
@@ -11,8 +12,6 @@ body {
 
 }
 
-
-
 #logo {
 
     width: 20rem;
@@ -22,9 +21,12 @@ body {
 
 }
 
+label{
+    display:none;
+}
+
 h1 {
     color: white;
-    border: 4px solid black;
     text-shadow: 3px 4px rgba(237, 28, 36, 0.6);
     font-size: 3rem;
 }
@@ -58,10 +60,12 @@ h1, h3 {
 }
 
 #number-of-results {
+    display:none;
     color: black;
     font-size: 2rem;
     background-color: aliceblue;
     border-radius: 20px;
+    margin: 3rem;
     font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
     width: auto;
     padding: 0.5rem;
@@ -70,7 +74,7 @@ h1, h3 {
 
 #search-results-wrapper {
 
-    padding-top: 1rem;
+    padding-top: 4rem;
     padding-left: 3rem;
     padding-right: 3rem;
     place-items: center;
@@ -116,6 +120,3 @@ h1, h3 {
     object-fit: fill;
 
 }
-
-
-@media screen {}
