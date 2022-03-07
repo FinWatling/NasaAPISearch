@@ -2,10 +2,11 @@ window.addEventListener("load", () => {
 
     searchButton = document.querySelector('#search-button');
     searchBar = document.querySelector('#search-bar');
-    searchResultsWrapper = document.querySelector('#search-results-wrapper')
-    numberOfResults = document.querySelector('#number-of-results')
+    searchResultsWrapper = document.querySelector('#search-results-wrapper');
+    numberOfResults = document.querySelector('#number-of-results');
+    fullSizeImage = document.querySelector('#fullsize-image');
 
-    var url = 'https://images-api.nasa.gov/search?q='
+    var url = 'https://images-api.nasa.gov/search?q=';
 
     const requestOptions = {
 
@@ -43,7 +44,7 @@ window.addEventListener("load", () => {
 
         var path;
 
-        if (query === "" || query === " ") { //get this working (in case of no input)
+        if (query === "" || query === " ") { 
 
             numberOfResults.textContent = "Please enter a search query "
 
@@ -67,18 +68,7 @@ window.addEventListener("load", () => {
         }
 
 
-        const resultsSet = new Set();
-
         for (i = 0; i < data.collection.items.length; i++) {
-
-            if (resultsSet.has(data.collection.items[i].links[0].href)) {
-
-                continue; //to prevent duplicate images
-
-            }
-
-            resultsSet.add(data.collection.items[i].links[0].href);
-
 
             var resultCard = document.createElement("div"),
                 infoSection = document.createElement("div"),
@@ -98,7 +88,16 @@ window.addEventListener("load", () => {
             title.textContent = data.collection.items[i].data[0].title;
             date.textContent = "Timestamp: " + data.collection.items[i].data[0].date_created;
 
+
             img.src = path;
+
+            img.addEventListener('click', () => {
+
+                
+                fullSizeImage.src = path;
+
+
+            })
 
             searchResultsWrapper.appendChild(resultCard);
             resultCard.appendChild(img);
@@ -106,7 +105,7 @@ window.addEventListener("load", () => {
             infoSection.appendChild(title);
             infoSection.appendChild(date);
 
-
+            
 
 
         }
