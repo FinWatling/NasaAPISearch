@@ -72,7 +72,7 @@ h1, h3 {
     padding: 0.5rem;
 }
 
-#fullscreen-image-wrapper{
+#fullsize-image-wrapper{
 
     display: grid;
     place-items: center;
@@ -87,6 +87,15 @@ h1, h3 {
     margin: 0; 
 
 }
+
+#loading-wrapper{
+    padding-top:1rem;
+    display:grid;
+    place-items: center;
+    display:none;
+
+}
+
 
 #search-results-wrapper {
 
@@ -107,6 +116,13 @@ h1, h3 {
 
 }
 
+.fullsize-icon{
+    width: 2rem;
+    height: auto;
+    float:right;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+}
 
 
 .result-card {

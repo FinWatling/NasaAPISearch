@@ -5,6 +5,8 @@ window.addEventListener("load", () => {
     searchResultsWrapper = document.querySelector('#search-results-wrapper');
     numberOfResults = document.querySelector('#number-of-results');
     fullSizeImage = document.querySelector('#fullsize-image');
+    fullSizeImageWrapper = document.querySelector('#fullsize-image-wrapper');
+    loadingWrapper = document.querySelector('#loading-wrapper');
 
     var url = 'https://images-api.nasa.gov/search?q=';
 
@@ -17,21 +19,22 @@ window.addEventListener("load", () => {
 
     searchButton.addEventListener("click", () => {
 
+        loadingWrapper.style.display = 'grid';
+
         var query = searchBar.value;
 
         var encodedURI = url + encodeURIComponent(query) + '&media_type=image';
 
-        console.log('searching at: ' + encodedURI);
+
+
 
         fetch(encodedURI, requestOptions)
             .then(res => res.json())
             .then(data => {
 
-
-                console.log(data.status);
-                console.log(data);
-
                 search(data, query);
+
+                loadingWrapper.style.display = 'none';
 
 
             })
@@ -44,7 +47,7 @@ window.addEventListener("load", () => {
 
         var path;
 
-        if (query === "" || query === " ") { 
+        if (query === "" || query === " ") {
 
             numberOfResults.textContent = "Please enter a search query "
 
@@ -59,7 +62,7 @@ window.addEventListener("load", () => {
             numberOfResults.textContent = "Your search for \"" + query + "\" returned " + data.collection.items.length + " results "
         } else {
             numberOfResults.style.display = "block";
-            numberOfResults.textContent = "No results found. "
+            numberOfResults.textContent = "No results found. ";
         }
 
 
@@ -72,17 +75,19 @@ window.addEventListener("load", () => {
 
             var resultCard = document.createElement("div"),
                 infoSection = document.createElement("div"),
-                imgcontainer = document.createElement("div"),
+                imgContainer = document.createElement("div"),
                 img = document.createElement("img"),
+                fullSizeIcon = document.createElement('img');
                 title = document.createElement("h3"),
                 date = document.createElement("p");
 
             img.className = "result-image";
             resultCard.className = "result-card";
             infoSection.className = "info-section";
-            imgcontainer.className = "img-container";
+            imgContainer.className = "img-container";
+            fullSizeIcon.className = "fullsize-icon";
 
-
+            fullSizeIcon.src = ('/img/icons8-resize-50.png');
             path = data.collection.items[i].links[0].href;
 
             title.textContent = data.collection.items[i].data[0].title;
@@ -91,10 +96,10 @@ window.addEventListener("load", () => {
 
             img.src = path;
 
-            img.addEventListener('click', () => {
+            fullSizeIcon.addEventListener('click', () => {
 
-                
-                fullSizeImage.src = path;
+                fullSizeImage.setAttribute('src', path);
+                fullSizeImageWrapper.style.display = "grid";
 
 
             })
@@ -104,13 +109,10 @@ window.addEventListener("load", () => {
             resultCard.appendChild(infoSection);
             infoSection.appendChild(title);
             infoSection.appendChild(date);
-
-            
+            infoSection.appendChild(fullSizeIcon);
 
 
         }
-
-
 
 
 
