@@ -1,6 +1,7 @@
 window.addEventListener("load", () => {
 
     searchButton = document.querySelector('#search-button');
+    form = document.querySelector('.form');
     searchBar = document.querySelector('#search-bar');
     searchResultsWrapper = document.querySelector('#search-results-wrapper');
     numberOfResults = document.querySelector('#number-of-results');
@@ -17,7 +18,9 @@ window.addEventListener("load", () => {
 
     }
 
-    searchButton.addEventListener("click", () => {
+    form.addEventListener("submit", (evt) => {
+
+        evt.preventDefault();
 
         loadingWrapper.style.display = 'grid';
 
