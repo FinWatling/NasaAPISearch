@@ -48,7 +48,7 @@ h1, h3 {
 }
 
 #search-bar {
-    width: 18rem;
+    width: 15rem;
     height: 2rem;
     text-align: center;
     font-size: 1rem;
@@ -72,27 +72,12 @@ h1, h3 {
     padding: 0.5rem;
 }
 
-#fullsize-image-wrapper{
-
-    display: grid;
-    place-items: center;
-    padding-top: 3rem;
-    display: none;
-    width: 100%;
-    border: 3px solid red;
-    height: auto;
-    z-index: 1;
-    position: fixed;
-    padding: 0;
-    margin: 0; 
-
-}
 
 #loading-wrapper{
+
     padding-top:1rem;
-    display:grid;
-    place-items: center;
     display:none;
+    place-items: center;
 
 }
 
@@ -113,16 +98,10 @@ h1, h3 {
 
     align-content: center;
     padding-left: 1rem;
+    padding-right: 1rem;
 
 }
 
-.fullsize-icon{
-    width: 2rem;
-    height: auto;
-    float:right;
-    margin-right: 1rem;
-    margin-bottom: 1rem;
-}
 
 
 .result-card {
@@ -152,3 +131,22 @@ h1, h3 {
     object-fit: fill;
 
 }
+
+@media only screen and (max-width: 400px) {
+    
+    .result-card{
+        width: 18rem;
+    }
+    
+    html,body{
+        display:grid;
+        place-items: center;
+        overflow-x: hidden;
+    }
+      body {
+        position: relative
+      }
+    
+
+    
+  }
