@@ -1,28 +1,25 @@
-body, html {
+body,
+html {
     overflow-x: hidden;
     max-width: 100%;
 }
 
 body {
-
     background-color: rgb(32, 93, 172);
     display: grid;
     overflow-x: hidden;
     position: relative;
-
 }
 
 #logo {
-
     width: 20rem;
     height: auto;
     padding: 0;
-    margin: 0;                                                                
-
+    margin: 0;
 }
 
-label{
-    display:none;
+label {
+    display: none;
 }
 
 h1 {
@@ -31,10 +28,10 @@ h1 {
     font-size: 3rem;
 }
 
-h1, h3 {
-    font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif
+h1,
+h3 {
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
 }
-
 
 #search-bar-wrapper {
     background-image: url('img/starsimage.jpg');
@@ -60,8 +57,7 @@ h1, h3 {
 }
 
 #number-of-results {
-
-    display:none;
+    display: none;
     color: black;
     font-size: 2rem;
     background-color: aliceblue;
@@ -72,18 +68,13 @@ h1, h3 {
     padding: 0.5rem;
 }
 
-
-#loading-wrapper{
-
-    padding-top:1rem;
-    display:none;
+#loading-wrapper {
+    padding-top: 1rem;
+    display: none;
     place-items: center;
-
 }
 
-
 #search-results-wrapper {
-
     padding-top: 4rem;
     padding-left: 3rem;
     padding-right: 3rem;
@@ -91,21 +82,15 @@ h1, h3 {
     display: grid;
     grid-gap: 3rem;
     grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
-
 }
 
 .info-section {
-
     align-content: center;
     padding-left: 1rem;
     padding-right: 1rem;
-
 }
 
-
-
 .result-card {
-
     place-items: center;
     align-items: center;
     width: 20rem;
@@ -115,12 +100,9 @@ h1, h3 {
     border-radius: 25px;
     height: auto;
     background-color: aliceblue;
-
 }
 
 .result-image {
-
-
     padding: 0;
     margin: 1rem;
     position: relative;
@@ -129,24 +111,19 @@ h1, h3 {
     max-height: 300px;
     height: 100%;
     object-fit: fill;
-
 }
 
 @media only screen and (max-width: 400px) {
-    
-    .result-card{
+    .result-card {
         width: 18rem;
     }
-    
-    html,body{
-        display:grid;
+    html,
+    body {
+        display: grid;
         place-items: center;
         overflow-x: hidden;
     }
-      body {
-        position: relative
-      }
-    
-
-    
-  }
+    body {
+        position: relative;
+    }
+}

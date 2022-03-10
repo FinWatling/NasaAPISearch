@@ -32,11 +32,10 @@ window.addEventListener("load", () => {
             .then(res => res.json())
             .then(data => {
 
-                
-
                 console.log(data)
 
                 search(data, query);
+
 
                 loadingWrapper.style.display = 'none';
 
@@ -111,7 +110,7 @@ window.addEventListener("load", () => {
             infoSection.appendChild(title);
             infoSection.appendChild(description)
             infoSection.appendChild(date);
-            
+
 
 
         }
@@ -128,4 +127,3 @@ window.addEventListener("load", () => {
 
 
 })
-
