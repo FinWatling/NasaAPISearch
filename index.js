@@ -28,11 +28,9 @@ window.addEventListener("load", () => {
 
 
         fetch(encodedURI, requestOptions)
-            .then(handleErrors)
+            .then(handleStatus)
             .then(res => res.json())
             .then(data => {
-
-                console.log(data)
 
                 search(data, query);
 
@@ -44,7 +42,7 @@ window.addEventListener("load", () => {
 
     })
 
-    function handleErrors(res) {
+    function handleStatus(res) {
         if (!res.ok) {
             numberOfResults.textContent = 'An error has occurred: ' + res.status;
         }
