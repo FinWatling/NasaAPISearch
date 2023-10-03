@@ -26,7 +26,6 @@ window.addEventListener("load", () => {
 
         var encodedURI = url + encodeURIComponent(query) + '&media_type=image';
 
-
         fetch(encodedURI, requestOptions)
             .then(handleStatus)
             .then(res => res.json())
@@ -48,8 +47,6 @@ window.addEventListener("load", () => {
         }
         return res;
     }
-
-
 
     function search(data, query) {
 
@@ -73,11 +70,9 @@ window.addEventListener("load", () => {
             numberOfResults.textContent = "No results found. ";
         }
 
-
         while (searchResultsWrapper.lastChild) {
             searchResultsWrapper.removeChild(searchResultsWrapper.lastChild);
         }
-
 
         for (i = 0; i < data.collection.items.length; i++) {
 
@@ -108,20 +103,6 @@ window.addEventListener("load", () => {
             infoSection.appendChild(title);
             infoSection.appendChild(description)
             infoSection.appendChild(date);
-
-
-
         }
-
-
-
-
-
     }
-
-
-
-
-
-
 })
